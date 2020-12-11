@@ -10,7 +10,6 @@ class addTwoNumbers {
 	public static void main(String[] args) {
 
 		String numeral = "LXIV";
-		
 		System.out.println(romanToInt(numeral));
 
 	}
