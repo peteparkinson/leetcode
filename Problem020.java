@@ -45,7 +45,6 @@ public class Problem020 {
 					}
 				}
 			}
-
 			if (stack.size() > 0) {
 				return false;
 			}
