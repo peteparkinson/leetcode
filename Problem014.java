@@ -11,7 +11,6 @@ public class Problem014 {
 		String[] strs = new String[] {"dog","racecar","car"};
 		//String[] strs = new String[] {"flower","flow","flight"};
 		//String[] strs = new String[];
-		
 		System.out.println(longestCommonPrefix(strs));
 		
 	}
