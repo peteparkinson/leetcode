@@ -41,7 +41,6 @@ public class Problem002 {
     		if(b == null) {
     			b = new ListNode(0);
     		}
-
         	current.val = (carry + a.val + b.val) % 10;
         	carry = (carry + a.val + b.val) / 10; 
 
