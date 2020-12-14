@@ -1,13 +1,13 @@
-/* Problem 1137
+/* 1137. N-th Tribonacci Number
  * https://leetcode.com/problems/n-th-tribonacci-number/
  */
 
 package leetCode;
 
-public class Problem070 {
+public class Problem1137 {
 	public static void main(String[] args) {
 		
-		System.out.println(climbStairs(0));
+		System.out.println(climbStairs(6));
 		
 	}
 	
