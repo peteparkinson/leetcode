@@ -18,7 +18,6 @@
  * 			this.next = next;
  * 		}
  *	}
- * 
  */
 
 package leetCode;
