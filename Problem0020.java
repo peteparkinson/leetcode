@@ -16,7 +16,6 @@ public class Problem020 {
 		// String s = "{[]}";
 		String s = "(){}}{";
 		System.out.println(isValid(s));
-
 	}
 
 	public static boolean isValid(String s) {
