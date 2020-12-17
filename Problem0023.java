@@ -11,19 +11,10 @@
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  * 
- * this solution uses the "merge two lists" function, one at a time.  
- * it's too slow: 10th percentile speed, 9th percentile RAM
- * there's a similar solution where if you merged 8 lists,
- * it would merge like this [(1+2) + (3+4)] + [(5+6) + (7+8)]
- * instead of like this (((((((1+2)+3)+4)+5)+6)+7)+8)
  * 
- */
-
-package leetCode;
-
-public class Problem0023 {
-	
-	public static ListNode mergeKLists(ListNode[] lists) {
+ * //Previous Solution
+ * 	
+ public static ListNode mergeKLists(ListNode[] lists) {
 
 		if(lists.length == 0) {
 			return null;
@@ -40,6 +31,39 @@ public class Problem0023 {
 		
 		
 		return ans;
+	}
+	
+ * this solution uses the "merge two lists" function, one at a time.  
+ * it's too slow: 10th percentile speed, 9th percentile RAM
+ * there's a similar solution where if you merged 8 lists,
+ * it would merge like this [(1+2) + (3+4)] + [(5+6) + (7+8)]
+ * instead of like this (((((((1+2)+3)+4)+5)+6)+7)+8)
+ * 
+ * New solution is 89th and 91st percentiles respectively. 
+ *
+ */
+
+package leetCode;
+
+public class Problem0023 {
+	
+	public static ListNode mergeKLists(ListNode[] lists) {
+		if(lists.length == 0) { return null;}
+		
+		ListNode[] arr = lists;
+    		int interval = 1;
+		
+    		while(arr.length / 2 >= interval) {
+    			for(int i = 0; i < arr.length - interval; i += interval * 2) {
+    				arr[i] = mergeTwoLists(arr[i], arr[i + interval]);
+    			}
+    		interval *= 2;
+    		}
+		//if divided odd number of times
+		if(arr.length % interval != 0) {
+			arr[0] = mergeTwoLists(arr[0], arr[interval]);
+		}
+			return arr[0];
 	}
 	
 	public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
@@ -128,7 +152,6 @@ public class Problem0023 {
 		ListNode tmp = mergeKLists(arr);
 		ListNode answer = tmp;
 
-		System.out.println();
 		while(answer != null) {
 			System.out.println(answer.val);
 			answer = answer.next;
