@@ -8,7 +8,6 @@ import java.util.Stack;
 
 public class Problem0100a {
 	public static void main(String[] args) {
-		
 		//TreeNode p = new TreeNode(1, new TreeNode(2), new TreeNode(3, new TreeNode(4), new TreeNode(5)));
 		TreeNode p = new TreeNode(1, new TreeNode(2), new TreeNode(3));
 		TreeNode q = new TreeNode(1, new TreeNode(2), new TreeNode(3));
