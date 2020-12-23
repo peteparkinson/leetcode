@@ -8,6 +8,7 @@ import java.util.Stack;
 
 public class Problem0100a {
 	public static void main(String[] args) {
+		
 		//TreeNode p = new TreeNode(1, new TreeNode(2), new TreeNode(3, new TreeNode(4), new TreeNode(5)));
 		TreeNode p = new TreeNode(1, new TreeNode(2), new TreeNode(3));
 		TreeNode q = new TreeNode(1, new TreeNode(2), new TreeNode(3));
@@ -22,19 +23,21 @@ public class Problem0100a {
 		
 		stk.add(p);
 		stk.add(q);
-		
+
+		TreeNode a;
+		TreeNode b;
 		while(!stk.isEmpty()) {
-			TreeNode a = stk.pop();
-			TreeNode b = stk.pop();
-			if(a == null && b == null) {
+			a = stk.pop();
+			b = stk.pop();
+			if(a == b) {
 				continue;
 			} else if(a == null || b == null || a.val != b.val){
 				return false;
 			}
-			stk.add(a.left);
-			stk.add(b.left);
 			stk.add(a.right);
 			stk.add(b.right);
+			stk.add(a.left);
+			stk.add(b.left);
 		}
 		return true;
 	}
