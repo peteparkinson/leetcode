@@ -25,6 +25,7 @@ package leetCode;
 public class Problem002 {
 	
 	// the function being tested
+	/*
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
     	ListNode head = new ListNode(0);
     	ListNode a = l1;
@@ -57,6 +58,53 @@ public class Problem002 {
     		b = b.next;
     	}
     	return head;
+	*/
+	
+		/* I'm revisiting the problems completed so far (about 30 of them).
+		 * The above solution is from 15 days ago.  The above ranked 79th 
+		 * and 21st percentile for speed and RAM, respectively. It creates 
+		 * a new node for each null, which is unnecessary.  Also, it creates 
+		 * each new node for the solution at the end of the loop which
+		 * necessitates a condition statement to prevent a node from being
+		 * added above the highest significant digit.
+		 * 
+		 * the new solution below simply ignores null nodes, instead of 
+		 * creating 0 value nodes.  and each new node for the solution is
+		 * created at the beginning of the loop, which still leaves an 
+		 * unnecessary 0 value node, but this time it's below the least 
+		 * significant digit, which is handled by returning "<node>.next".
+		 * 79th and 98th percentile, respectively.
+		 */
+	
+		ListNode head = new ListNode();
+		ListNode dum = head;
+		ListNode a = l1;
+		ListNode b = l2;
+		
+		int carry = 0;
+		
+		while(a != null || b != null) {
+			dum.next = new ListNode();
+			dum = dum.next;
+			if(a == null) {
+				dum.val = (b.val + carry) % 10;
+				carry = (b.val + carry) / 10;	
+				b = b.next;
+			} else if(b == null) {
+				dum.val = (a.val + carry) % 10;
+				carry = (a.val + carry) / 10;	
+				a = a.next;
+			} else {
+				dum.val = (a.val + b.val + carry) % 10;
+				carry = (a.val + b.val + carry) / 10;	
+				a = a.next;
+				b = b.next;
+			}
+			if (carry == 1 && a == null && b == null) {
+				dum.next = new ListNode(1);
+			}
+		}
+		return head.next;
     }
     
 	public static void main(String[] args) {
