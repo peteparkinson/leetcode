@@ -31,7 +31,7 @@ public class Problem0003 {
 	    
 
 /******************************
- * 99th percentile above
+ * 99th percentile above.  saw this method of mapping characters to 
  * 9th percentile below
  
     public static int lengthOfLongestSubstring(String s) {
@@ -53,7 +53,8 @@ public class Problem0003 {
     	return max;
     }
     
-    /* Another answer using a hash map.  
+    /******************************
+     * Another answer using a hash map.  
      * this is similar to the arr[256] answer, slightly slower.
      
 public static int lengthOfLongestSubstring(String s) {
