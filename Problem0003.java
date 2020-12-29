@@ -7,6 +7,7 @@ package leetCode;
 public class Problem0003 {
 	public static void main(String[] args) {
 		// "abcabcbb"
+		// "tmmzuxt"
 		// "pwwkew"
 		// "bbbbb"
 		// "b"
@@ -29,9 +30,10 @@ public class Problem0003 {
 }
 	    
 
-/*
- * 9th percentile
- * 
+/******************************
+ * 99th percentile above
+ * 9th percentile below
+ 
     public static int lengthOfLongestSubstring(String s) {
         if(s.equals("")){
             return 0;
@@ -50,5 +52,5 @@ public class Problem0003 {
     	}
     	return max;
     }
-*/
+*****************************/
     
