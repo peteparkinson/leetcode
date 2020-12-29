@@ -52,5 +52,23 @@ public class Problem0003 {
     	}
     	return max;
     }
+    
+    /* Another answer using a hash map.  
+     * this is similar to the arr[256] answer, slightly slower.
+     
+public static int lengthOfLongestSubstring(String s) {
+	if(s.equals("")) { return 0; }
+	HashMap<Character, Integer> map = new HashMap<Character, Integer>();
+    	int ans = 0;
+    	for(int i = 0, j = 0; i < s.length(); i++) {
+    		if(map.containsKey(s.charAt(i))
+			&& map.get(s.charAt(i)) >= j){
+    			j =map.get(s.charAt(i)) + 1;
+    		}
+		map.put(s.charAt(i), i);
+    		ans = Math.max(ans, i - j + 1);
+    	}
+    	return ans;
+}
 *****************************/
     
