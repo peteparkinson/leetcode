@@ -15,7 +15,6 @@
           this.right = right;
       }
   }
- *
  * revisit and find recursive solution
  */
 
