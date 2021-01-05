@@ -11,22 +11,6 @@ import java.util.Queue;
 public class Problem0107 {
 	public static void main(String[] args) {
 
-		/* Driver
-		 
-		   3
-   		/  \
-  	 9    20
-         /  \
-        15   7
-        
-        expected out: 
-        [
-  			[15,7],
-  			[9,20],
-  			[3]
-		    ]
-		 */
-
 		TreeNode t1 = new TreeNode(3);
 		TreeNode t2 = new TreeNode(9);
 		TreeNode t3 = new TreeNode(20);
