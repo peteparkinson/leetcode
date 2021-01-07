@@ -1,5 +1,9 @@
 /* 111. Minimum Depth of Binary Tree
  * https://leetcode.com/problems/minimum-depth-of-binary-tree/
+ * 
+ * this is scoring low, 55th and 66th percentiles.
+ * there's no need to calculate beyond the length of the shortes branch + 1.
+ * this currently calcultes the entire lengths of branches
  */
 package leetCode;
 
