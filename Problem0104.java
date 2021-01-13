@@ -22,8 +22,7 @@ package leetCode;
 
 public class Problem0104 {
 	public static void main(String[] args) {
-		// not writing a driver for this
-    // simple recursive DFS
+	
 	}
 	
     public static int maxDepth(TreeNode root) {
